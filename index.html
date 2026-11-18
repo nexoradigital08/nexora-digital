@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nexora Digital helps ambitious businesses grow with modern websites, e-commerce and digital marketing.">
+  <meta name="theme-color" content="#0b0f1a">
+  <title>Nexora Digital | Innovate. Grow. Succeed.</title>
+  <style>
+    :root {
+      --navy:#0b0f1a; --navy2:#101a2b; --panel:#121d30; --blue:#0066ff;
+      --cyan:#25b8ff; --white:#f7f9ff; --muted:#aab6ca; --line:rgba(164,190,230,.16);
+      --max:1160px; --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--navy);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(11,15,26,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.06em}
+    .brand-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(145deg,#0878ff,#08c2ed);font-weight:950;font-size:22px;clip-path:polygon(12% 0,100% 0,88% 100%,0 100%)}
+    .brand small{display:block;color:var(--cyan);font-size:9px;letter-spacing:.48em;margin-top:-5px}
+    .navlinks{display:flex;align-items:center;gap:28px;color:#c5cee0;font-size:14px}
+    .navlinks a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:999px;background:var(--blue);color:#fff;font-weight:750;border:1px solid transparent;transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);background:#1678ff;box-shadow:0 10px 30px #0066ff44}
+    .btn.outline{background:transparent;border-color:#536987;color:#fff}
+    .menu-btn{display:none;background:none;color:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+    .hero{position:relative;overflow:hidden;padding:100px 0 88px;background:radial-gradient(ellipse at 82% 22%,#073e8a55,transparent 36%),linear-gradient(135deg,#0b0f1a,#0e1a2d 70%,#0b0f1a)}
+    .hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid #1685ff25;border-radius:50%;right:-160px;top:30px;box-shadow:0 0 0 45px #1685ff0a,0 0 0 95px #1685ff08;pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#7ecbff;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.19em}
+    .eyebrow:before{content:"";width:24px;height:2px;background:var(--cyan)}
+    h1{font-size:clamp(42px,6vw,72px);line-height:1.04;letter-spacing:-.055em;margin:20px 0}
+    .gradient{background:linear-gradient(90deg,#fff 10%,#61c7ff 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:18px;color:#bac7dc;max-width:590px;margin:0 0 28px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap}
+    .trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:36px;color:#aab6ca;font-size:12px}
+    .trust span:before{content:"✓";color:#39baff;font-weight:900;margin-right:7px}
+    .visual{min-height:390px;position:relative;display:grid;place-items:center}
+    .orbit{width:min(100%,430px);aspect-ratio:1;border-radius:50%;border:1px solid #1685ff35;display:grid;place-items:center;box-shadow:0 0 90px #0066ff20,inset 0 0 80px #0066ff0d;position:relative}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #1685ff30;border-radius:50%;inset:35px}
+    .orbit:after{inset:75px}
+    .n-symbol{width:150px;height:150px;display:grid;place-items:center;font-size:112px;line-height:1;font-weight:950;font-style:italic;color:#0aa9ff;text-shadow:0 0 35px #007bff88;transform:skew(-8deg)}
+    .float-card{position:absolute;padding:15px 18px;border:1px solid #7dbbff38;background:#111d30e8;backdrop-filter:blur(12px);border-radius:14px;box-shadow:0 16px 50px #0006}
+    .float-card strong{display:block;font-size:13px}
+    .float-card small{color:var(--muted);font-size:11px}
+    .fc-one{top:32px;right:-5px}.fc-two{bottom:35px;left:-4px}
+    section{padding:88px 0}
+    .section-head{max-width:690px;margin-bottom:38px}
+    .section-head h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em;line-height:1.12;margin:13px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .services{background:#0e1523}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(150deg,#142238,#101827);border:1px solid var(--line);border-radius:var(--radius);padding:27px;transition:.22s}
+    .card:hover{transform:translateY(-5px);border-color:#1678ff80}
+    .icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#0066ff20;color:#59baff;font-size:22px;margin-bottom:20px}
+    .card h3{margin:0 0 9px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .taglist{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .tag{font-size:11px;color:#b8dfff;border:1px solid #4a8ccc44;background:#0a2440;padding:5px 9px;border-radius:999px}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#111c2d}
+    .work-art{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .work-art:before{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff28;border-radius:50%;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06}
+    .work-art span{position:relative;font-size:27px;font-weight:850;letter-spacing:-.04em}
+    .auto{background:linear-gradient(135deg,#12223d,#0757a7)}.build{background:linear-gradient(135deg,#202b3d,#52657d)}.stay{background:linear-gradient(135deg,#182d3b,#087e91)}
+    .work-copy{padding:20px}.work-copy h3{margin:0 0 5px}.work-copy p{margin:0;color:var(--muted);font-size:13px}
+    .demo-note{font-size:12px;color:#91a1b8;margin-top:18px}
+    .about{background:#0e1523}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .about-panel{padding:34px;border-radius:22px;background:linear-gradient(145deg,#10274a,#111b2c);border:1px solid #3279c544}
+    .about-panel h3{font-size:25px;margin:0 0 12px}.about-panel p{color:#c0cce0}
+    .points{display:grid;gap:15px;margin-top:22px}.point{display:flex;gap:12px;color:#d5deed;font-size:14px}.check{color:#42baff;font-weight:900}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price-card{padding:27px;border:1px solid var(--line);border-radius:20px;background:#111b2b}
+    .price-card.featured{border-color:#1685ff;box-shadow:0 0 35px #0066ff20}
+    .price-card h3{margin:0}.price{font-size:28px;font-weight:850;margin:16px 0 4px}.price-card p{color:var(--muted);font-size:13px}
+    .price-card ul{padding-left:18px;color:#c8d4e7;font-size:13px;min-height:120px}.price-card li{margin:8px 0}
+    .price-card .btn{width:100%;margin-top:8px}
+    .contact{background:linear-gradient(135deg,#0d1a2c,#0b0f1a)}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+    .contact-info p{color:var(--muted)}
+    form{padding:27px;border:1px solid var(--line);border-radius:20px;background:#111b2b}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;font-size:12px;color:#c7d4e7;margin:0 0 7px}
+    input,textarea,select{width:100%;border:1px solid #34445d;background:#0b1422;color:#fff;border-radius:10px;padding:12px 13px;outline:none;margin-bottom:15px}
+    input:focus,textarea:focus,select:focus{border-color:#1685ff}
+    textarea{min-height:115px;resize:vertical}
+    .form-message{font-size:12px;color:#ffcf83;margin:12px 0 0}
+    footer{padding:30px 0;border-top:1px solid var(--line);color:#92a1b8;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:18px}
+    @media(max-width:850px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding:75px 0}.visual{min-height:330px}.cards,.work-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}.fc-one{right:8px}}
+    @media(max-width:620px){.container{width:min(100% - 30px,var(--max))}.nav{height:68px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px 22px;background:#0b0f1a;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:16px}.navlinks.open{display:flex}.nav-cta{display:none}.hero{padding:62px 0}.visual{min-height:290px}.orbit{width:290px}.n-symbol{font-size:85px}.float-card{padding:10px 12px}.cards,.work-grid,.pricing-grid{grid-template-columns:1fr}section{padding:66px 0}.form-row{grid-template-columns:1fr;gap:0}.price-card ul{min-height:0}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Nexora Digital home">
+        <span class="brand-mark">N</span><span>NEXORA<small>DIGITAL</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="btn nav-cta" href="#contact">Get a quote <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Your digital growth partner</div>
+          <h1>Make your business <span class="gradient">stand out online.</span></h1>
+          <p class="lead">We create modern websites and practical digital marketing strategies that help ambitious businesses reach more people and turn interest into enquiries.</p>
+          <div class="actions"><a class="btn" href="#contact">Start a project <span>→</span></a><a class="btn outline" href="#services">Explore services</a></div>
+          <div class="trust"><span>Responsive websites</span><span>Clear strategy</span><span>Built for growth</span></div>
+        </div>
+        <div class="visual" aria-label="Nexora Digital brand illustration">
+          <div class="orbit"><div class="n-symbol">N</div></div>
+          <div class="float-card fc-one"><strong>Digital experiences</strong><small>Designed around your goals</small></div>
+          <div class="float-card fc-two"><strong>Innovate. Grow. Succeed.</strong><small>Your next step starts here</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">What we do</div><h2>Digital solutions for <span class="gradient">real business goals.</span></h2><p>From your first website to a stronger online marketing presence, we help bring the important pieces together.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">⌘</div><h3>Website Design & Development</h3><p>Professional, mobile-friendly websites that explain what you do and make it easy for customers to take the next step.</p><div class="taglist"><span class="tag">Business websites</span><span class="tag">Landing pages</span></div></article>
+          <article class="card"><div class="icon">▣</div><h3>E-commerce Solutions</h3><p>Online stores designed to present products clearly and create a straightforward shopping experience.</p><div class="taglist"><span class="tag">Online stores</span><span class="tag">Product pages</span></div></article>
+          <article class="card"><div class="icon">↗</div><h3>Digital Marketing</h3><p>Practical campaigns and content planning to help your business reach relevant audiences online.</p><div class="taglist"><span class="tag">Campaigns</span><span class="tag">Social media</span></div></article>
+          <article class="card"><div class="icon">⌕</div><h3>Search Optimisation</h3><p>Foundational SEO improvements that help search engines understand your website and its content.</p><div class="taglist"><span class="tag">On-page SEO</span><span class="tag">Local visibility</span></div></article>
+          <article class="card"><div class="icon">◎</div><h3>Social Media Support</h3><p>Consistent, brand-aligned content and planning to keep your business active across selected social platforms.</p><div class="taglist"><span class="tag">Content planning</span><span class="tag">Creative assets</span></div></article>
+          <article class="card"><div class="icon">⚙</div><h3>Website Care</h3><p>Ongoing content updates and maintenance options to help keep your website current and useful.</p><div class="taglist"><span class="tag">Updates</span><span class="tag">Maintenance</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Selected concepts</div><h2>Good ideas deserve <span class="gradient">great experiences.</span></h2><p>These sample concepts show the kinds of digital experiences Nexora Digital can develop.</p></div>
+        <div class="work-grid">
+          <article class="work"><div class="work-art auto"><span>DRIVE / AUTO</span></div><div class="work-copy"><h3>Automotive concept</h3><p>A clean dealership experience for vehicle discovery and customer enquiries.</p></div></article>
+          <article class="work"><div class="work-art build"><span>BUILD / CO.</span></div><div class="work-copy"><h3>Construction concept</h3><p>A project-led company website designed to communicate capability and build trust.</p></div></article>
+          <article class="work"><div class="work-art stay"><span>STAY / ESCAPE</span></div><div class="work-copy"><h3>Hospitality concept</h3><p>A welcoming accommodation website with clear information and enquiry paths.</p></div></article>
+        </div>
+        <p class="demo-note">Portfolio disclosure: These are fictional demonstration concepts, not commissioned client projects or customer results.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div><div class="eyebrow">About Nexora</div><div class="section-head"><h2>Technology with a <span class="gradient">business-first mindset.</span></h2><p>Nexora Digital is a growing digital agency concept built to help businesses strengthen how they show up online. We focus on clear communication, thoughtful design and solutions shaped around each client's needs.</p></div><a class="btn" href="#contact">Let's talk about your goals →</a></div>
+        <div class="about-panel"><h3>Innovate. Grow. Succeed.</h3><p>Our approach is simple: understand the business, plan the right digital solution, then build and improve it with purpose.</p><div class="points"><div class="point"><span class="check">✓</span><span>Clear scope and expectations before work begins.</span></div><div class="point"><span class="check">✓</span><span>Responsive design for desktop, tablet and mobile.</span></div><div class="point"><span class="check">✓</span><span>Practical recommendations, without unnecessary complexity.</span></div></div></div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Starting packages</div><h2>A clear place to <span class="gradient">start.</span></h2><p>Indicative starting prices in South African rand. Every project is quoted according to its scope, content, integrations and requirements.</p></div>
+        <div class="pricing-grid">
+          <article class="price-card"><h3>Launch</h3><div class="price">From R1,500</div><p>For a focused online introduction.</p><ul><li>Single landing page</li><li>Responsive layout</li><li>Contact call-to-action</li><li>Basic on-page SEO setup</li></ul><a class="btn outline" href="#contact">Request a quote</a></article>
+          <article class="price-card featured"><h3>Business</h3><div class="price">From R3,500</div><p>For businesses ready for a fuller website.</p><ul><li>Up to five core pages</li><li>Responsive design</li><li>Enquiry form layout</li><li>Basic SEO setup</li></ul><a class="btn" href="#contact">Request a quote</a></article>
+          <article class="price-card"><h3>Growth</h3><div class="price">From R6,000</div><p>For more tailored website needs.</p><ul><li>Custom page structure</li><li>Expanded content sections</li><li>Additional functionality scoped</li><li>SEO and analytics planning</li></ul><a class="btn outline" href="#contact">Request a quote</a></article>
+        </div>
+        <p class="demo-note">Prices are draft estimates for planning, not binding offers. Domain, hosting, paid tools, copywriting, advertising spend and third-party fees may be additional. E-commerce projects require a separate quote.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info"><div class="eyebrow">Start a conversation</div><div class="section-head"><h2>Have a project in <span class="gradient">mind?</span></h2><p>Tell us a little about your business and what you'd like to achieve. We'll use the details to understand the project and prepare a suitable next step.</p></div><p><strong>Serving:</strong><br>South Africa and international clients</p><p><strong>Contact:</strong><br>Use the enquiry form to prepare your project brief.</p></div>
+        <form id="enquiryForm">
+          <div class="form-row"><div><label for="name">Your name</label><input id="name" name="name" required placeholder="Name"></div><div><label for="email">Email address</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div></div>
+          <label for="business">Business name</label><input id="business" name="business" placeholder="Your company">
+          <label for="service">What do you need?</label><select id="service" name="service"><option>Website design and development</option><option>E-commerce website</option><option>Digital marketing</option><option>SEO</option><option>Website maintenance</option><option>Not sure yet</option></select>
+          <label for="details">Tell us about your project</label><textarea id="details" name="details" required placeholder="What does your business do, and what would you like your website or marketing to achieve?"></textarea>
+          <button class="btn" type="submit">Prepare enquiry →</button>
+          <p class="form-message" id="formMessage">Demo form: this prototype does not send or store enquiries. Connect a form service or business email before publishing.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Nexora Digital. Innovate. Grow. Succeed.</span><span class="footer-links"><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#contact">Contact</a></span></div></footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('enquiryForm').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('formMessage').textContent =
+        'Thanks — the form layout is working. Before launch, connect a form service or business email so enquiries can be delivered securely.';
+    });
+  </script>
+</body>
+</html>
